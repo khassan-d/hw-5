@@ -2,7 +2,7 @@ import re
 from typing import Callable
 
 def generator_numbers(text: str):
-    pattern = r"\d+[.]\d+" # патерн для пошуку чисел що розділені точкою (дійсних чисел, таких як у прикладі)
+    pattern = r"\s\d+[.]\d+\s" # патерн для пошуку чисел що розділені точкою (дійсних чисел, таких як у прикладі)
     numbers = re.findall(pattern, text) # у намберс повертаю список співпадінь
     for number in numbers: # ітеруюся по кожному елементу в списку
         yield number
